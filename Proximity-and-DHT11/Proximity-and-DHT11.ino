@@ -32,7 +32,13 @@ void loop() {
     digitalWrite(ledG, HIGH);             //accendi led green
     float h = dht.readHumidity();         //leggi umidità
     float t = dht.readTemperature();      //leggi temperatura
-    int m = distanceSensor.measureDistanceCm();  //leggi distanza
+    int avg = 0;                                  //media distanza su 10 valori a 5 ms
+    int number = 10;
+    for (int i=0;i<number;i++) {
+    avg += distanceSensor.measureDistanceCm();
+    delay(5);
+   }
+   int m = avg / 10;
     Serial.print(now/1000);                 //scrivi info in seriale
     Serial.print(", ");
     Serial.print(h);
