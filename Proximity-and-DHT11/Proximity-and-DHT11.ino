@@ -18,7 +18,7 @@ void setup() {
   pinMode(ledG, OUTPUT);
 
   dht.begin();
-  Serial.println("Time, Humidity, Temperature, Distance");
+  Serial.println("Time, % Humidity, Temperature, Distance");
 
 }
 
@@ -30,7 +30,7 @@ void loop() {
     Serial.print(now/1000);
     Serial.print(", ");
     Serial.print(dht.readHumidity());
-    Serial.print("%, ");
+    Serial.print(", ");
     Serial.print(dht.readTemperature());
     Serial.print(", ");
     Serial.println(distanceSensor.measureDistanceCm());
