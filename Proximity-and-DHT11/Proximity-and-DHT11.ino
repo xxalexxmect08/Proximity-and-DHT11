@@ -34,18 +34,20 @@ void loop() {
   if(now >= old_millis + delta){
     old_millis = now;
     digitalWrite(ledG, HIGH);
+    float h = dht.readHumidity();
+    float t = dht.readTemperature();
     Serial.print(now/1000);
     Serial.print(", ");
-    Serial.print(dht.readHumidity());
+    Serial.print(h);
     Serial.print(", ");
-    Serial.print(dht.readTemperature());
+    Serial.print(t);
     Serial.print(", ");
     Serial.println(distanceSensor.measureDistanceCm());
     digitalWrite(ledG, LOW);
-    if(dht.readHumidity()<50){
+    if(h<50){
       digitalWrite(ledR1, HIGH);
     }
-    if(dht.readTemperature()>30){
+    if(t>30){
       digitalWrite(ledR2, HIGH);
     }
   }
