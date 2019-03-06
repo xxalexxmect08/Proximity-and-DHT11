@@ -36,14 +36,13 @@ void loop() {
     digitalWrite(ledG, HIGH);
     float h = dht.readHumidity();
     float t = dht.readTemperature();
-    int m = distanceSensor.measureDistanceCm();
     Serial.print(now/1000);
     Serial.print(", ");
     Serial.print(h);
     Serial.print(", ");
     Serial.print(t);
     Serial.print(", ");
-    Serial.println(m);
+    Serial.println(distanceSensor.measureDistanceCm());
     digitalWrite(ledG, LOW);
     if(h<50){
       digitalWrite(ledR1, HIGH);
