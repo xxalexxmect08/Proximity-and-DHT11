@@ -507,11 +507,32 @@ Wire Wire Line
 	4000 2050 4000 2250
 Connection ~ 4000 2250
 Wire Wire Line
-	4000 2250 2800 2250
+	4000 2250 3500 2250
 Text Label 4000 1300 0    50   ~ 0
 11
 Text Label 4500 1300 0    50   ~ 0
 12
 Text Label 5000 1300 0    50   ~ 0
 13
+$Comp
+L Device:R_POT RV?
+U 1 1 5C866EDB
+P 3500 1500
+F 0 "RV?" H 3430 1546 50  0000 R CNN
+F 1 "R_POT" H 3430 1455 50  0000 R CNN
+F 2 "" H 3500 1500 50  0001 C CNN
+F 3 "~" H 3500 1500 50  0001 C CNN
+	1    3500 1500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3500 1350 2050 1350
+Connection ~ 2050 1350
+Wire Wire Line
+	3500 1650 3500 2250
+Connection ~ 3500 2250
+Wire Wire Line
+	3500 2250 2800 2250
+Text Label 3650 1500 0    50   ~ 0
+4
 $EndSCHEMATC
